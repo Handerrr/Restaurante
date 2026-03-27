@@ -69,7 +69,7 @@ const pratos: Restaurant[] = [
 const Home = () => (
   <>
     <Hero />
-    <RestaurantList restaurants={pratos} background="branco" />
+    <RestaurantList restaurants={pratos} />
   </>
 )
 

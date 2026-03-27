@@ -3,11 +3,10 @@ import RestaurantCard from '../RestaurantCard'
 import { Container, List } from './styles'
 
 export type Props = {
-  background: 'salmao' | 'branco'
   restaurants: Restaurant[]
 }
 
-const RestaurantList = ({ background, restaurants }: Props) => (
+const RestaurantList = ({ restaurants }: Props) => (
   <Container>
     <div className="container">
       <List>
