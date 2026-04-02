@@ -1,29 +1,19 @@
-class Restaurant {
-  title: string
-  rating: number
-  category: string
-  description: string
-  image: string
-  infos: string[]
+export interface Restaurant {
   id: number
-
-  constructor(
-    title: string,
-    rating: number,
-    category: string,
-    description: string,
-    image: string,
-    infos: string[],
-    id: number,
-  ) {
-    this.title = title
-    this.rating = rating
-    this.category = category
-    this.description = description
-    this.image = image
-    this.infos = infos
-    this.id = id
-  }
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio: Prato[]
 }
 
-export default Restaurant
+export interface Prato {
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
+  foto: string
+  preco: number
+}

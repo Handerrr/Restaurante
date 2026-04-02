@@ -12,6 +12,7 @@ import {
 } from './styles'
 
 type Props = {
+  id: number
   title: string
   rating: number
   image: string
@@ -20,6 +21,7 @@ type Props = {
 }
 
 const RestaurantCard = ({
+  id,
   title,
   rating,
   image,
@@ -41,7 +43,7 @@ const RestaurantCard = ({
         </span>
       </Centralizar>
       <Descricao>{description}</Descricao>
-      <Button type="link" to="/perfil" title="Saiba mais">
+      <Button type="link" to={`/perfil/${id}`} title="Saiba mais">
         Saiba mais
       </Button>
     </CardContent>

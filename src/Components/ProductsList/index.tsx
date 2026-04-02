@@ -1,21 +1,23 @@
 import ProductCard from '../ProductCard'
 import { List } from './styles'
-import type { Product } from '../../models/Products'
+import type { Prato } from '../../models/Restaurant'
 
 type Props = {
-  products: Product[]
+  products: Prato[]
+  onOpen: (product: Prato) => void
 }
 
-const ProductList = ({ products }: Props) => (
+const ProductList = ({ products, onOpen }: Props) => (
   <div className="container">
     <List>
       {products.map((product) => (
         <ProductCard
           key={product.id}
           id={product.id}
-          title={product.title}
-          description={product.description}
-          image={product.image}
+          title={product.nome}
+          description={product.descricao}
+          image={product.foto}
+          onOpen={() => onOpen(product)}
         />
       ))}
     </List>

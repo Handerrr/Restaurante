@@ -9,7 +9,7 @@ const HeaderPerfil = () => (
 
       <img src={logo} alt="E-Food" />
 
-      <LinkCart href="#">0 produto(s) no carrinho</LinkCart>
+      <LinkCart href="/">0 produto(s) no carrinho</LinkCart>
     </div>
   </HeaderBar>
 )
