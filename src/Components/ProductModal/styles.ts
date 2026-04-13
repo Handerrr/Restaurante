@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Overlay = styled.div`
   position: fixed;
@@ -22,6 +22,12 @@ export const ModalContainer = styled.div`
   width: 100%;
   padding: 32px;
   position: relative;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    max-width: 90%;
+    padding: 16px;
+  }
 `
 
 export const Image = styled.img`
@@ -29,6 +35,12 @@ export const Image = styled.img`
   height: 280px;
   object-fit: cover;
   margin-right: 24px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
 `
 
 export const Content = styled.div`
@@ -61,4 +73,9 @@ export const Close = styled.span`
   top: 16px;
   right: 16px;
   cursor: pointer;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    top: 2px;
+    right: 2px;
+  }
 `

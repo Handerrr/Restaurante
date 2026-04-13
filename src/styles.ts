@@ -27,3 +27,8 @@ export const GlobalCss = createGlobalStyle`
     margin: 0 auto;
   }
 `
+
+export const breakpoints = {
+  tablet: '768px',
+  desktop: '1024px',
+}

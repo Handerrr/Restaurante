@@ -5,7 +5,6 @@ export const Card = styled.div`
   background-color: ${cores.salmao};
   color: ${cores.branca};
   padding: 8px;
-  max-width: 320px;
   width: 100%;
 `
 

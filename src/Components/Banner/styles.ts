@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -34,8 +34,14 @@ export const Titulo = styled.h2`
   font-weight: 900;
   bottom: 24px;
   left: 50%;
-  transform: translateX(-480px);
+  transform: translateX(-50%);
   color: ${cores.branca};
+
+  @media (max-width: ${breakpoints.tablet}) {
+    left: 16px;
+    transform: none;
+    font-size: 20px;
+  }
 `
 
 export const Categoria = styled.span`
@@ -43,7 +49,13 @@ export const Categoria = styled.span`
   color: rgba(255, 255, 255, 0.7);
   font-weight: 100;
   position: absolute;
-  transform: translateX(-480px);
+  transform: translateX(-50%);
   top: 24px;
   left: 50%;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    left: 16px;
+    transform: none;
+    font-size: 16px;
+  }
 `

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
   background-color: ${cores.branca};
   border: 1px solid ${cores.salmao};
+  width: 100%;
   border-radius: 8px;
   padding: 8px;
   position: relative;
@@ -23,7 +24,11 @@ export const CardContent = styled.div`
 export const CardImage = styled.img`
   width: 100%;
   display: block;
-  height: 180px;
+  height: 160px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 140px;
+  }
 `
 
 export const Titulo = styled.h3`

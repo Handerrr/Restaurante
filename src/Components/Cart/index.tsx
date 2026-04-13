@@ -2,12 +2,17 @@ import { CartContainer, CartItem, Overlay, Prices, Sidebar } from './styles'
 import Button from '../Button'
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootReducer } from '../../store'
-import { close, remove } from '../../store/reducers/cart'
+import { close, goToAddress, remove } from '../../store/reducers/cart'
 import { formataPreco } from '../../utils/formatters'
+import Address from './StepCart/Address'
+import Payment from './StepCart/Payment'
+import Finished from './StepCart/Finished'
 
 const Cart = () => {
   const dispatch = useDispatch()
-  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items, step } = useSelector(
+    (state: RootReducer) => state.cart,
+  )
 
   const closeCart = () => {
     dispatch(close())
@@ -27,25 +32,36 @@ const Cart = () => {
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <Sidebar>
-        <ul>
-          {items.map((item) => (
-            <CartItem key={item.id}>
-              <img src={item.foto} alt={item.nome} />
-              <div>
-                <h3>{item.nome}</h3>
-                <span>{formataPreco(item.preco)}</span>
-              </div>
-              <button onClick={() => removeItem(item.id)} type="button" />
-            </CartItem>
-          ))}
-        </ul>
-        <Prices>
-          <span>Valor total </span>
-          {formataPreco(getTotalPrice())}
-        </Prices>
-        <Button title="Clique aqui para continuar com a compra" type="button">
-          Continuar com a compra
-        </Button>
+        {step === 'cart' && (
+          <>
+            <ul>
+              {items.map((item) => (
+                <CartItem key={item.id}>
+                  <img src={item.foto} alt={item.nome} />
+                  <div>
+                    <h3>{item.nome}</h3>
+                    <span>{formataPreco(item.preco)}</span>
+                  </div>
+                  <button onClick={() => removeItem(item.id)} type="button" />
+                </CartItem>
+              ))}
+            </ul>
+            <Prices>
+              <span>Valor total </span>
+              {formataPreco(getTotalPrice())}
+            </Prices>
+            <Button
+              title="Continuar"
+              type="button"
+              onClick={() => dispatch(goToAddress())}
+            >
+              Continuar com a entrega
+            </Button>
+          </>
+        )}
+        {step === 'address' && <Address />}
+        {step === 'payment' && <Payment />}
+        {step === 'finished' && <Finished />}
       </Sidebar>
     </CartContainer>
   )

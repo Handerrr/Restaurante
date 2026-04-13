@@ -1,4 +1,5 @@
 import Hero from '../../Components/Hero'
+import Loader from '../../Components/Loader'
 import RestaurantList from '../../Components/RestaurantList'
 import { useGetRestaurantsQuery } from '../../services/api'
 
@@ -6,7 +7,7 @@ const Home = () => {
   const { data: restaurants } = useGetRestaurantsQuery()
 
   if (!restaurants) {
-    return <h3>Carregando restaurantes ...</h3>
+    return <Loader />
   }
 
   return (

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import fundo from '../../assets/fundo.png'
 
 export const HeaderBar = styled.header`
   display: flex;
-  align-item: center;
+  align-items: center;
   background-image: url(${fundo});
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,6 +14,12 @@ export const HeaderBar = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      flex-direction: row;
+      gap: 8px;
+      justify-content: space-between;
+    }
   }
 
   a {
