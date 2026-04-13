@@ -1,6 +1,6 @@
 import ProductCard from '../ProductCard'
 import { List } from './styles'
-import type { Prato } from '../../models/Restaurant'
+import type { Prato } from '../../Models/Restaurant'
 import Modal from '../ProductModal'
 import { useState } from 'react'
 
