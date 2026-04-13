@@ -1,5 +1,5 @@
 import { Overlay, ModalContainer, Image, Content, Close } from './styles'
-import type { Prato } from '../../models/Restaurant'
+import type { Prato } from '../..Models/Restaurant'
 import { formataPreco } from '../../utils/formatters'
 import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'

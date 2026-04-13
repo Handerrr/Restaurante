@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { Restaurant } from '../models/Restaurant'
+import type { Restaurant } from '../Models/Restaurant'
 
 type CheckoutPayload = {
   products: {

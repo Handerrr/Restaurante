@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import type { Prato } from '../../Models/Restaurant'
 
 type CartState = {
   items: Prato[]

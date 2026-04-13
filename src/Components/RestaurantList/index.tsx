@@ -1,4 +1,4 @@
-import type { Restaurant } from '../../models/Restaurant'
+import type { Restaurant } from '../../Models/Restaurant'
 import RestaurantCard from '../RestaurantCard'
 import { Container, List } from './styles'
 
