@@ -1,6 +1,10 @@
 import * as S from '../styles'
 import { useDispatch } from 'react-redux'
-import { setDelivery, goToPayment } from '../../../../store/reducers/cart'
+import {
+  setDelivery,
+  goToPayment,
+  backToCart,
+} from '../../../../store/reducers/cart'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -112,6 +116,9 @@ const Address = () => {
         />
 
         <S.Button type="submit">Continuar com o pagamento</S.Button>
+        <S.Button type="button" onClick={() => dispatch(backToCart())}>
+          Voltar para o carrinho
+        </S.Button>
       </form>
     </S.Sidebar>
   )

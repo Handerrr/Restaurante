@@ -50,13 +50,15 @@ const Cart = () => {
               <span>Valor total </span>
               {formataPreco(getTotalPrice())}
             </Prices>
-            <Button
-              title="Continuar"
-              type="button"
-              onClick={() => dispatch(goToAddress())}
-            >
-              Continuar com a entrega
-            </Button>
+            {items.length > 0 && (
+              <Button
+                type="button"
+                title="continuar"
+                onClick={() => dispatch(goToAddress())}
+              >
+                Continuar com a entrega
+              </Button>
+            )}
           </>
         )}
         {step === 'address' && <Address />}
